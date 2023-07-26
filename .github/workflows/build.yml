@@ -24,9 +24,12 @@ jobs:
 
       - name: Build Release APK
         run: ./gradlew assembleRelease
+        
+      - name: Build Release AAB
+        run: ./gradlew bundleRelease
 
-      - name: Deploy APK
-        uses: actions/upload-artifact@v2
+      - name: Create Github Release
+        uses: ncipollo/release-action@v1
         with:
-          name: app-release
-          path: app/build/outputs/apk/release/app-release.apk
+          artifacts: " app/build/outputs/apk/release/*.apk,app/build/outputs/apk/release/*.aab"
+          tag: v1.0.${{ github.run_number }}
