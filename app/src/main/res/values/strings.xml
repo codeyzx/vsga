@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">VSGA</string>
+    <string name="employe">Employe List</string>
+    <!--    <string name="splash">Junior Mobile Dev VSGA Application</string>-->
+    <string name="appbar_title">VSGA</string>
+    <string name="service">Main Features:</string>
+    <string name="input_nama">Input Nama</string>
+    <string name="kalkulator">Kalkulator</string>
+    <string name="listview">List View</string>
+    <string name="catatan">Catatan</string>
+    <string name="auth">Login</string>
+    <string name="sqlite">SQLite</string>
+    <string name="rest_api">Employee (API)</string>
+    <string name="under">Developed by Yahya</string>
+    <string name="action_settings">Settings</string>
+</resources>
