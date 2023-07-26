@@ -21,16 +21,30 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-
-      - name: Build Release APK
-        run: ./gradlew assembleRelease
         
-      - name: Build Release AAB
-        run: ./gradlew bundleRelease
+        
+      ## DEBUG
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+        
+      - name: Build Debug AAB
+        run: ./gradlew bundleDebug
 
       - name: Create Github Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: " app/build/outputs/apk/debug/*.apk,app/build/outputs/bundle/debug/*.aab"
-#           artifacts: " app/build/outputs/apk/release/*.apk,app/build/outputs/bundle/release/*.aab"
           tag: v1.0.${{ github.run_number }}
+
+      ## RELEASE
+#       - name: Build Release APK
+#         run: ./gradlew assembleRelease
+        
+#       - name: Build Release AAB
+#         run: ./gradlew bundleRelease
+
+#       - name: Create Github Release
+#         uses: ncipollo/release-action@v1
+#         with:
+#           artifacts: " app/build/outputs/apk/release/*.apk,app/build/outputs/bundle/release/*.aab"
+#           tag: v1.0.${{ github.run_number }}
