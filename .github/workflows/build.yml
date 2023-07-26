@@ -31,5 +31,5 @@ jobs:
       - name: Create Github Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: " app/build/outputs/apk/release/*.apk,app/build/outputs/apk/release/*.aab"
+          artifacts: " app/build/outputs/apk/release/*.apk,app/build/outputs/apk/bundle/*.aab"
           tag: v1.0.${{ github.run_number }}
